@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2023 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +36,8 @@ object AppViewModelProvider {
         // Initializer for ItemEditViewModel
         initializer {
             ItemEditViewModel(
-                this.createSavedStateHandle()
+                this.createSavedStateHandle(),
+                inventoryApplication().container.itemsRepository
             )
         }
         // Initializer for ItemEntryViewModel
@@ -47,7 +48,8 @@ object AppViewModelProvider {
         // Initializer for ItemDetailsViewModel
         initializer {
             ItemDetailsViewModel(
-                this.createSavedStateHandle()
+                this.createSavedStateHandle(),
+                inventoryApplication().container.itemsRepository
             )
         }
 
@@ -64,3 +66,4 @@ object AppViewModelProvider {
  */
 fun CreationExtras.inventoryApplication(): InventoryApplication =
     (this[AndroidViewModelFactory.APPLICATION_KEY] as InventoryApplication)
+

@@ -16,6 +16,7 @@
 
 package com.example.inventory.ui.home
 
+
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -72,7 +73,7 @@ fun HomeScreen(
     navigateToItemEntry: () -> Unit,
     navigateToItemUpdate: (Int) -> Unit,
     viewModel: HomeViewModel = viewModel(factory = AppViewModelProvider.Factory),
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     val homeUiState by viewModel.homeUiState.collectAsState()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
